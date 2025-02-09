@@ -1,95 +1,34 @@
-.scrapbook-container {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 20px;
-    text-align: center;
-  }
-  
-  .scrapbook-title {
-    font-size: 28px;
+.scrapbook-text {
+    font-size: 18px;
     font-weight: bold;
-    margin-bottom: 10px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.8);
+    padding: 10px;
+    border-radius: 5px;
+    border: 2px solid #ddd;
+    cursor: grab;
   }
   
-  /* Background color picker */
-  .color-picker {
+  .scrapbook-text:hover {
+    border: 2px solid #aaa;
+  }
+  
+  /* Text Input Box */
+  .add-text-section {
     margin-top: 10px;
     display: flex;
     justify-content: center;
     gap: 10px;
   }
   
-  .color-button {
-    width: 30px;
-    height: 30px;
-    border-radius: 50%;
-    cursor: pointer;
-    border: none;
-  }
-  
-  .color-button:hover {
-    transform: scale(1.1);
-  }
-  
-  /* Scrapbook Page */
-  .scrapbook-page {
-    width: 100%;
-    max-width: 100%;
-    height: 80vh;
-    position: relative;
-    overflow: hidden;
-    border-radius: 12px;
-    border: 2px solid #ddd;
-    margin-top: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  /* Draggable & Resizable Images */
-  .scrapbook-image {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+  .text-input {
+    width: 200px;
+    padding: 10px;
+    border: 2px solid #ccc;
     border-radius: 8px;
-  }
-  
-  /* Upload Button */
-  .hidden {
-    display: none;
-  }
-  
-  .scrapbook-button {
-    background-color: #ffb6c1;
-    color: white;
-    padding: 10px 15px;
-    border: none;
-    border-radius: 8px;
-    cursor: pointer;
     font-size: 16px;
-    margin: 10px;
   }
   
-  .scrapbook-button:hover {
-    background-color: #ff69b4;
-  }
-  
-  /* Saved Pages */
-  .scrapbook-book {
-    margin-top: 20px;
-    text-align: left;
-  }
-  
-  .scrapbook-section-title {
-    font-size: 22px;
-    margin-bottom: 10px;
-  }
-  
-  .scrapbook-page-title {
-    font-size: 18px;
-    font-weight: bold;
-    margin-bottom: 10px;
-  }
   
   
   

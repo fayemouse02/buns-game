@@ -6,119 +6,106 @@ const backgroundColors = ["#ffffff", "#f8d7da", "#d4edda", "#d1ecf1", "#fef3c7"]
 
 export default function Scrapbook() {
   const [entries, setEntries] = useState([]);
-  const [currentPage, setCurrentPage] = useState(0);
   const [images, setImages] = useState([]);
+  const [texts, setTexts] = useState([]);
   const [bgColor, setBgColor] = useState("#ffffff");
+  const [newText, setNewText] = useState("");
 
-  // Load saved scrapbook state
   useEffect(() => {
     const savedBgColor = localStorage.getItem("scrapbookBgColor");
     if (savedBgColor) setBgColor(savedBgColor);
 
     const savedEntries = JSON.parse(localStorage.getItem("scrapbookEntries"));
-    if (savedEntries) setEntries(savedEntries);
+    if (Array.isArray(savedEntries)) setEntries(savedEntries);
   }, []);
 
-  // Handle Image Upload
   const handleImageUpload = (e) => {
     const file = e.target.files[0];
     if (file) {
       const reader = new FileReader();
       reader.onloadend = () => {
-        setImages([
-          ...images,
-          { id: Date.now(), src: reader.result, x: 50, y: 50, width: 150, height: 150 },
-        ]);
+        setImages([...images, { id: Date.now(), src: reader.result, x: 50, y: 50, width: 150, height: 150 }]);
       };
       reader.readAsDataURL(file);
     }
   };
 
-  // Handle Image Drag
-  const onDragStop = (index, e, d) => {
-    const newImages = [...images];
-    newImages[index] = { ...newImages[index], x: d.x, y: d.y };
-    setImages(newImages);
+  const addText = () => {
+    if (newText.trim()) {
+      setTexts([...texts, { id: Date.now(), content: newText, x: 100, y: 100, width: 200, height: 50 }]);
+      setNewText("");
+    }
   };
 
-  // Handle Image Resize
-  const onResizeStop = (index, e, direction, ref, delta, position) => {
-    const newImages = [...images];
-    newImages[index] = {
-      ...newImages[index],
-      width: ref.style.width.replace("px", ""),
-      height: ref.style.height.replace("px", ""),
-      x: position.x,
-      y: position.y,
-    };
-    setImages(newImages);
-  };
-
-  // Handle Background Color Change
   const changeBgColor = (color) => {
     setBgColor(color);
     localStorage.setItem("scrapbookBgColor", color);
   };
 
-  // Save Scrapbook Page
   const savePage = () => {
-    const newEntry = { images, bgColor };
+    const newEntry = { images: [...images], texts: [...texts], bgColor };
     const updatedEntries = [...entries, newEntry];
     setEntries(updatedEntries);
     setImages([]);
+    setTexts([]);
     localStorage.setItem("scrapbookEntries", JSON.stringify(updatedEntries));
+  };
+
+  const clearScrapbook = () => {
+    setEntries([]);
+    setBgColor("#ffffff");
+    localStorage.removeItem("scrapbookEntries");
+    localStorage.setItem("scrapbookBgColor", "#ffffff");
   };
 
   return (
     <div className="scrapbook-container">
       <h1 className="scrapbook-title">📖 Our Scrapbook 🐻🐰</h1>
 
-      {/* Background Color Picker */}
       <div className="color-picker">
         {backgroundColors.map((color) => (
           <button key={color} className="color-button" style={{ backgroundColor: color }} onClick={() => changeBgColor(color)} />
         ))}
       </div>
 
-      {/* Editable Scrapbook Page */}
-      <div className="scrapbook-page" style={{ backgroundColor: bgColor }}>
-        {images.map((image, index) => (
-          <Rnd
-            key={image.id}
-            size={{ width: image.width, height: image.height }}
-            position={{ x: image.x, y: image.y }}
-            bounds="parent"
-            onDragStop={(e, d) => onDragStop(index, e, d)}
-            onResizeStop={(e, direction, ref, delta, position) => onResizeStop(index, e, direction, ref, delta, position)}
-          >
-            <img src={image.src} alt="Memory" className="scrapbook-image" />
+      <div className="scrapbook-page" style={{ backgroundColor: bgColor, position: "relative", overflow: "hidden", width: "80%", height: "500px", margin: "20px auto" }}>
+        {images.map((image) => (
+          <Rnd key={image.id} default={{ x: image.x, y: image.y, width: image.width, height: image.height }} bounds="parent">
+            <img src={image.src} alt="Memory" className="scrapbook-image" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+          </Rnd>
+        ))}
+
+        {texts.map((text) => (
+          <Rnd key={text.id} default={{ x: text.x, y: text.y, width: text.width, height: text.height }} bounds="parent">
+            <div className="scrapbook-text">{text.content}</div>
           </Rnd>
         ))}
       </div>
 
-      {/* Upload Button */}
       <input type="file" accept="image/*" id="upload" className="hidden" onChange={handleImageUpload} />
       <label htmlFor="upload" className="scrapbook-button">➕ Add Image</label>
 
-      {/* Save Page Button */}
-      <button className="scrapbook-button" onClick={savePage}>💾 Save Page</button>
+      <div className="add-text-section">
+        <input type="text" value={newText} onChange={(e) => setNewText(e.target.value)} placeholder="Enter text" className="text-input" />
+        <button className="scrapbook-button" onClick={addText}>📝 Add Text</button>
+      </div>
 
-      {/* View Saved Pages */}
+      <button className="scrapbook-button" onClick={savePage}>💾 Save Page</button>
+      <button className="scrapbook-button delete-button" onClick={clearScrapbook}>❌ Clear Scrapbook</button>
+
       {entries.length > 0 && (
         <div className="scrapbook-book">
           <h2 className="scrapbook-section-title">Saved Pages</h2>
-          {entries.map((entry, pageIndex) => (
-            <div key={pageIndex} className="scrapbook-page" style={{ backgroundColor: entry.bgColor }}>
-              <p className="scrapbook-page-title">Page {pageIndex + 1}</p>
+          {entries.map((entry, index) => (
+            <div key={index} className="scrapbook-page" style={{ backgroundColor: entry.bgColor || "#ffffff", position: "relative", overflow: "hidden", width: "80%", height: "500px", margin: "20px auto" }}>
               {entry.images.map((image) => (
-                <Rnd
-                  key={image.id}
-                  size={{ width: image.width, height: image.height }}
-                  position={{ x: image.x, y: image.y }}
-                  bounds="parent"
-                  disableDragging // Prevent users from dragging saved pages
-                >
-                  <img src={image.src} alt="Memory" className="scrapbook-image" />
+                <Rnd key={image.id} default={{ x: image.x, y: image.y, width: image.width, height: image.height }} bounds="parent" disableDragging>
+                  <img src={image.src} alt="Memory" className="scrapbook-image" style={{ width: "100%", height: "100%", objectFit: "cover" }} />
+                </Rnd>
+              ))}
+              {entry.texts.map((text) => (
+                <Rnd key={text.id} default={{ x: text.x, y: text.y, width: text.width, height: text.height }} bounds="parent" disableDragging>
+                  <div className="scrapbook-text">{text.content}</div>
                 </Rnd>
               ))}
             </div>
@@ -128,6 +115,10 @@ export default function Scrapbook() {
     </div>
   );
 }
+
+
+
+
 
 
 
