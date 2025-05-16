@@ -1,15 +1,16 @@
 {
   "files": {
-    "main.css": "/buns-game/static/css/main.dcc6aa3c.css",
-    "main.js": "/buns-game/static/js/main.86b1f9e7.js",
+    "main.css": "/buns-game/static/css/main.95cb6198.css",
+    "main.js": "/buns-game/static/js/main.3283fbb3.js",
     "static/js/488.25cfb671.chunk.js": "/buns-game/static/js/488.25cfb671.chunk.js",
+    "static/media/hkpixelbg.png": "/buns-game/static/media/hkpixelbg.879469808cc02153fd1a.png",
     "index.html": "/buns-game/index.html",
-    "main.dcc6aa3c.css.map": "/buns-game/static/css/main.dcc6aa3c.css.map",
-    "main.86b1f9e7.js.map": "/buns-game/static/js/main.86b1f9e7.js.map",
+    "main.95cb6198.css.map": "/buns-game/static/css/main.95cb6198.css.map",
+    "main.3283fbb3.js.map": "/buns-game/static/js/main.3283fbb3.js.map",
     "488.25cfb671.chunk.js.map": "/buns-game/static/js/488.25cfb671.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.dcc6aa3c.css",
-    "static/js/main.86b1f9e7.js"
+    "static/css/main.95cb6198.css",
+    "static/js/main.3283fbb3.js"
   ]
 }
