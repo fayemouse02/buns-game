@@ -5,11 +5,23 @@ import "./Home.css"; // This should contain your CSS styles
 function Home() {
  return (
   <div className="full-post">
-    <h2>Home page 🧁</h2>
-    <p>
-      Hi! I'm the author of this cute blog. I love bunnies, baking, and rainy
-      days with books. Thanks for stopping by! 🌸
-    </p>
+     <h2>Home Page 🧁</h2>
+  <p>
+    Hi! If you're reading this, then you're lucky enough to be on the Bear Blog for super cool bear activities! 🐻✨
+    This website is definitely a work in progress, and there’s still so much to do.
+  </p>
+
+  <h3>🐾 Bear To-Do List:</h3>
+  <ul>
+    <li>🖼️ Resize recipe images</li>
+    <li>📋 Add recipe details</li>
+    <li>📝 Add poems</li>
+    <li>🧩 Add puzzle section</li>
+    <li>🎛️ Reformat Build-a-Bear dropdowns</li>
+    <li>🐰 Add Build-a-Bun</li>
+    <li>🖼️ Add image wall</li>
+    <li>📋 Add beary affirmations</li>
+  </ul>
   </div>
 );
 }

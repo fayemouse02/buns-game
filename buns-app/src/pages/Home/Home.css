@@ -50,8 +50,8 @@
   }
   
   .header-image {
-    width: 40px;                   /* Resize image */
-    height: 40px;
+    width: 60px;                   /* Resize image */
+    height: 60px;
     object-fit: contain;           /* Prevent image distortion */
   }
 

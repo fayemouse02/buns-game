@@ -57,3 +57,9 @@ Send cute animated reactions (bear hugging bunny, blushing, etc.).
 Customize avatars with different outfits.
 Add cozy music or pixel rain effects.
 ✨ Extra: Add a “snuggle mode” where a bunny & bear sit together on-screen!
+
+# updating
+```
+npm run build
+npm run deploy
+```

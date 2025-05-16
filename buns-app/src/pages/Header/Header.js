@@ -11,7 +11,7 @@ function Header() {
        
       <nav>
         <Link to="/">Home</Link> {/* Use Link for routing */}
-        <Link to="/about">About</Link> {/* Use Link for routing */}
+        <Link to="/about">Build A Bear</Link> {/* Use Link for routing */}
         <Link to="/posts">Posts(poetry?)</Link> {/* Use Link for routing */}
         <Link to="/recipies">Recipies</Link> {/* Use Link for routing */}
       </nav>
