@@ -1,29 +1,13 @@
-// import React from "react";
-// import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// import Home from "./pages/Home/Home";
-// import About from "./pages/About/About";
-// import Scrapbook from "./pages/Scrapbook/Scrapbook";
-
-// function App() {
-//   return (
-//     <Router>
-//       <Routes>
-//         <Route path="/" element={<Home />} />
-//         <Route path="/about" element={<About />} />
-//         <Route path="/scrapbook" element={<Scrapbook />} />
-//       </Routes>
-//     </Router>
-//   );
-// }
 
 // export default App;
 import React from "react";
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { HashRouter as Router, Routes, Route } from "react-router-dom";
 import Header from "./pages/Header/Header";
 import Home from "./pages/Home/Home";
 import About from "./pages/About/About";
 import Posts from "./pages/Posts/Posts";
 import Footer from "./pages/Footer/Footer";
+import Recipies from "./pages/Recipies/Recipies";
 import "./App.css";
 
 function App() {
@@ -34,6 +18,7 @@ function App() {
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
         <Route path="/posts" element={<Posts />} />
+        <Route path="/recipies" element={<Recipies />} />
       </Routes>
       <Footer />
     </Router>
