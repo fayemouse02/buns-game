@@ -45,15 +45,15 @@ const posts = [
       
   {
     id: 2,
-    title: "Baking Day",
-    content: "Cookies, cupcakes and all things sweet and pink! 🍰",
-    full: "I spent the day baking strawberry cupcakes with pink frosting. Here's my recipe... 🍓🧁",
+    title: "Poem2",
+    content: "TODO",
+    full: "TODO",
   },
   {
     id: 3,
-    title: "Rainy Day Reads",
-    content: "Perfect books to cuddle up with. ☔📚",
-    full: "Rainy days are best with a warm blanket and a fantasy novel. My picks are listed here...",
+    title: "Poem3",
+    content: "TODO",
+    full: "TODO",
   },
 
 ];

@@ -2,11 +2,11 @@ import React, { useState, useEffect, useRef } from "react";
 import "./Buildabear.css";
 
 const avatarSections = {
-  lower: ["lower1.png", "lower2.png"],
-  upper: ["upper1.png"],
-  eyes: ["eyes1.png", "eyes2.png", "eyes3.png"],
-  arms: ["arms1.png", "arms2.png"],
-  hat: ["hat1.png", "hat2.png"],
+  lower: ["lower1.png", "lower2.png", "lower3.png", "lower4.png", "lower5.png"],
+  upper: ["upper1.png", "upper2.png", "upper3.png"],
+  eyes: ["eyes1.png", "eyes2.png", "eyes3.png", "eyes4.png"],
+  arms: ["arms1.png", "arms2.png", "arms3.png", "arms4.png", "arms5.png"],
+  hat: ["none", "hat1.png", "hat2.png", "hat3.png"],
 };
 
 const layerOrder = ["lower", "upper", "eyes", "arms", "hat"]; // draw order
@@ -37,19 +37,20 @@ const AvatarCreator = () => {
         img.onerror = reject;
       });
   
-    const drawAvatar = async () => {
-      for (const layer of layerOrder) {
-        const filename = avatarParts[layer];
-        if (filename) {
-          try {
-            const img = await loadImage(`/buildabear/${filename}`);
-            ctx.drawImage(img, 0, 0, size, size);
-          } catch (err) {
-            console.error(`Failed to load ${filename}`, err);
+      const drawAvatar = async () => {
+        for (const layer of layerOrder) {
+          const filename = avatarParts[layer];
+          if (filename && filename !== "none") {
+            try {
+              const img = await loadImage(`/buildabear/${filename}`);
+              ctx.drawImage(img, 0, 0, size, size);
+            } catch (err) {
+              console.error(`Failed to load ${filename}`, err);
+            }
           }
         }
-      }
-    };
+      };
+      
   
     drawAvatar();
   }, [avatarParts]);

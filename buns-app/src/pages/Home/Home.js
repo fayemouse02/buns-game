@@ -13,9 +13,8 @@ function Home() {
 
   <h3>🐾 Bear To-Do List:</h3>
   <ul>
-    <li>🖼️ Resize recipe images</li>
-    <li>📋 Add recipe details</li>
-    <li>📝 Add poems</li>
+    <li>📋 Add missing recipe details</li>
+    <li>📝 Add missing poems</li>
     <li>🧩 Add puzzle section</li>
     <li>🎛️ Reformat Build-a-Bear dropdowns</li>
     <li>🐰 Add Build-a-Bun</li>

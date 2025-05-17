@@ -8,6 +8,7 @@ import About from "./pages/About/About";
 import Posts from "./pages/Posts/Posts";
 import Footer from "./pages/Footer/Footer";
 import Recipies from "./pages/Recipies/Recipies";
+import Letters from "./pages/Letters/Letters";
 import "./App.css";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
         <Route path="/about" element={<About />} />
         <Route path="/posts" element={<Posts />} />
         <Route path="/recipies" element={<Recipies />} />
+        <Route path="/letters" element={<Letters />} />
       </Routes>
       <Footer />
     </Router>

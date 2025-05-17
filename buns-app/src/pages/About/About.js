@@ -7,8 +7,7 @@ function About() {
     <div className="full-post">
       <h2>Build A Bear 🧁</h2>
       <p>
-        Hi! I'm the author of this cute blog. I love bunnies, baking, and rainy
-        days with books. Thanks for stopping by! 🌸
+        Welcome to build a bear! Here you can create your very own bear avatar! 🌸
       </p>
       <AvatarCreator />
     </div>
