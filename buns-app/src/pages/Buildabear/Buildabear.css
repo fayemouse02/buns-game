@@ -1,0 +1,55 @@
+.avatar-builder {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 2rem;
+  }
+  
+  canvas {
+    border: 2px dashed #ffcce5;
+    background-color: #fffafc;
+    border-radius: 8px;
+  }
+  
+  .controls {
+    margin-top: 1rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    justify-content: center;
+  }
+  
+  .section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .section label {
+    font-weight: bold;
+    font-family: 'Pixelify Sans', sans-serif;
+    margin-bottom: 0.25rem;
+    color: #ff69b4;
+  }
+  
+
+
+
+  .section select {
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: 2px solid #cc99ff;
+  background-color: #f9f1ff;
+  font-size: 1rem;
+  color: #4b0082;
+  transition: all 0.2s ease;
+  width: 200px;
+   font-family: 'Pixelify Sans', sans-serif;
+}
+
+.section select:hover {
+  border-color: #9933ff;
+  background-color: #f3e0ff;
+  cursor: pointer;
+   font-family: 'Pixelify Sans', sans-serif;
+}

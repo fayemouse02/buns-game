@@ -1,14 +1,20 @@
-import React from "react";
-import "./Header.css";
+import { Link } from "react-router-dom"; // Import Link from react-router-dom
 
 function Header() {
   return (
     <header>
-      <h1>My Cute Blog 🐰</h1>
+    <div class="header-content">
+         <img src="pixelbear.png" alt="Blog Icon" class="header-image" />
+        <h1>The Beary Blog</h1>
+     </div>
+  
+       
       <nav>
-        <a href="/">Home</a>
-        <a href="/about">About</a>
-        <a href="/posts">Posts</a>
+        <Link to="/">Home</Link> {/* Use Link for routing */}
+        <Link to="/about">Build A Bear</Link> {/* Use Link for routing */}
+        <Link to="/posts">Poetry</Link> {/* Use Link for routing */}
+        <Link to="/recipies">Recipies</Link> {/* Use Link for routing */}
+        <Link to="/letters">Letters</Link> {/* Use Link for routing */}
       </nav>
     </header>
   );
