@@ -3,13 +3,21 @@ import "./Buildabear.css";
 
 const avatarSections = {
   lower: ["bare.png", "basic_pants.png", "fanny_pack.png", "formal_pants.png", "sweatpants.png", "underwear.png"],
-  upper: ["bare_upper.png", "lederhosen.png", "royal_cape.png", "suit_and_tie.png", "tshirt.png"],
+  upper: ["bare_upper.png", "lederhosen.png", "royal_cape.png", "suit_and_tie.png", "tshirt.png", "fairy_wings.png"],
   eyes: ["default.png", "happy.png", "sad.png", "sunnies.png"],
-  arms: ["bear_arms_up.png", "bear_arms_down.png", "up_long_sleeve.png", "down_long_sleeve.png", "down_short_sleeve_.png", "up_short_sleeve.png"],
+  arms: ["bear_arms_up.png", "bear_arms_down.png", "up_long_sleeve.png", "down_long_sleeve.png", "down_short_sleeve.png", "up_short_sleeve.png"],
   hat: ["none", "bunny_ears.png", "crown.png", "robin_hood.png", "party_hat.png", "tophat.png"],
 };
 
 const layerOrder = ["lower", "upper", "eyes", "arms", "hat"]; // draw order
+
+const formatLabel = (filename) => {
+  if (filename === "none") return "none";
+  return filename
+    .replace(".png", "")
+    .replace(/_/g, " ")
+};
+
 
 const AvatarCreator = () => {
   const canvasRef = useRef(null);
@@ -75,8 +83,9 @@ const AvatarCreator = () => {
             >
               {avatarSections[section].map(filename => (
                 <option key={filename} value={filename}>
-                  {filename}
+                  {formatLabel(filename)}
                 </option>
+
               ))}
             </select>
           </div>

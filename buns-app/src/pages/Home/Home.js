@@ -16,10 +16,8 @@ function Home() {
     <li>📋 Add missing recipe details</li>
     <li>📝 Add missing poems</li>
     <li>🧩 Add puzzle section</li>
-    <li>🎛️ Reformat Build-a-Bear dropdowns</li>
     <li>🐰 Add Build-a-Bun</li>
     <li>🖼️ Add image wall</li>
-    <li>📋 Add beary affirmations</li>
   </ul>
   </div>
 );

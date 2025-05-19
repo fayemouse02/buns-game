@@ -32,3 +32,24 @@
     color: #ff69b4;
   }
   
+
+
+
+  .section select {
+  padding: 0.5rem;
+  border-radius: 10px;
+  border: 2px solid #cc99ff;
+  background-color: #f9f1ff;
+  font-size: 1rem;
+  color: #4b0082;
+  transition: all 0.2s ease;
+  width: 200px;
+   font-family: 'Pixelify Sans', sans-serif;
+}
+
+.section select:hover {
+  border-color: #9933ff;
+  background-color: #f3e0ff;
+  cursor: pointer;
+   font-family: 'Pixelify Sans', sans-serif;
+}
