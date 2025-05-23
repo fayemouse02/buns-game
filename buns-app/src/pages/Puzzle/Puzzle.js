@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useRef, useEffect } from 'react';
 import './Puzzle.css';
 
 const PUZZLE_SIZE = 3; // Adjust as needed
@@ -6,42 +6,49 @@ const IMAGE_SIZE = 600; // Image dimensions in px
 
 const puzzles = [
   {
-    imageUrl: 'linoprint.png',
+    imageUrl: 'puzzles/chilin.png',
+    title: 'HK travels',
     reward: '🐻 You unlocked baking bear!',
     rewardImageUrl: 'rewardstickers/bakingbear.png',
   },
   {
-    imageUrl: 'linoprint.png',
+    imageUrl: 'puzzles/malaga.png',
+    title: 'Spain travels',
     reward: '🐻 You unlocked bunny bear!',
     rewardImageUrl: 'rewardstickers/bunnybear.png',
   },
   {
-    imageUrl: '/puzzle-image3.jpg',
+    imageUrl: 'puzzles/brugges.png',
+     title: 'Belgium travels',
     reward: '🐻 You unlocked distinguished bear!',
     rewardImageUrl: 'rewardstickers/distinguishedbear.png',
   },
    {
-    imageUrl: '/puzzle-image3.jpg',
+    imageUrl: 'puzzles/disney.png',
+    title: 'Disney!',
     reward: '🐻 You unlocked matrix bear!',
     rewardImageUrl: 'rewardstickers/matrixbear.png',
   },
    {
-    imageUrl: '/puzzle-image3.jpg',
+    imageUrl: 'puzzles/fellas.png',
+    title: 'All my fellas',
     reward: '🐻 You unlocked heart bear!',
     rewardImageUrl: 'rewardstickers/originalheartbear.png',
   },
    {
-    imageUrl: '/puzzle-image3.jpg',
+    imageUrl: 'puzzles/lisbon.png',
+    title: 'Portugal travels',
     reward: '🐻 You unlocked shopping bear!',
     rewardImageUrl: 'rewardstickers/shoppingbear.png',
   },
    {
-    imageUrl: '/puzzle-image3.jpg',
+    imageUrl: 'puzzles/pixelers.png',
+    title: 'Slayers',
     reward: '🐻 You unlocked slay bear!',
     rewardImageUrl: 'rewardstickers/slaybear.png',
   },
    {
-    imageUrl: '/puzzle-image3.jpg',
+    imageUrl: 'puzzles/games.png',
     reward: '🐻 You unlocked swag bear!',
     rewardImageUrl: 'rewardstickers/swagbear.png',
   },
@@ -79,9 +86,20 @@ const PuzzleCarousel = () => {
 
   const tileSizePx = IMAGE_SIZE / PUZZLE_SIZE;
 
+  const completionRef = useRef(null);
+
+    const isComplete = checkComplete();
+
+    useEffect(() => {
+    if (isComplete && completionRef.current) {
+        completionRef.current.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    }
+    }, [isComplete]);
+
   return (
     <div className='full-post'>
-      <h2 className="text-center text-xl mb-4">🧩 Pick a Puzzle</h2>
+      <h2 className="text-center text-xl mb-4">🧩 Puzzles</h2>
+      <h3 className="text-center text-xl mb-4">{puzzles[currentPuzzle].title}</h3>
 
       <div className="puzzle-grid">
         {pieces.map((pieceIndex, targetIndex) => {
@@ -131,7 +149,7 @@ const PuzzleCarousel = () => {
       </div>
 
       {checkComplete() && (
-        <div >
+        <div>
             <div className="completion-message mt-4">
                 🎉 {puzzles[currentPuzzle].reward} 🎉
                 <br></br>
@@ -140,9 +158,10 @@ const PuzzleCarousel = () => {
                     src={puzzles[currentPuzzle].rewardImageUrl}
                     alt="Reward"
                     className="reward-image mt-2"
+                    
                 />
            </div>
-          <br></br>
+          <br ref={completionRef}></br>
           <br></br>
           <p>The quickest way to add this as a sticker in whatsapp is to login through the browser <a style={{color: '#ff8fc4'}} href="https://web.whatsapp.com/" target="_blank" rel="noopener noreferrer">here</a>!</p>
           <p>Go to a chat, view your stickers, then click the + to add the sticker!</p>
