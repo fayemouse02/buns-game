@@ -1,16 +1,16 @@
 {
   "files": {
     "main.css": "/buns-game/static/css/main.462737ff.css",
-    "main.js": "/buns-game/static/js/main.343b989b.js",
+    "main.js": "/buns-game/static/js/main.e6ace859.js",
     "static/js/488.25cfb671.chunk.js": "/buns-game/static/js/488.25cfb671.chunk.js",
     "static/media/hkpixelbg.png": "/buns-game/static/media/hkpixelbg.879469808cc02153fd1a.png",
     "index.html": "/buns-game/index.html",
     "main.462737ff.css.map": "/buns-game/static/css/main.462737ff.css.map",
-    "main.343b989b.js.map": "/buns-game/static/js/main.343b989b.js.map",
+    "main.e6ace859.js.map": "/buns-game/static/js/main.e6ace859.js.map",
     "488.25cfb671.chunk.js.map": "/buns-game/static/js/488.25cfb671.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.462737ff.css",
-    "static/js/main.343b989b.js"
+    "static/js/main.e6ace859.js"
   ]
 }
