@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import './Puzzle.css';
 
-const PUZZLE_SIZE = 3; // Adjust as needed
+const PUZZLE_SIZE = 6; // Adjust as needed
 const IMAGE_SIZE = 600; // Image dimensions in px
 
 const puzzles = [
@@ -49,6 +49,7 @@ const puzzles = [
   },
    {
     imageUrl: 'puzzles/games.png',
+    title: 'You got games on your phone?',
     reward: '🐻 You unlocked swag bear!',
     rewardImageUrl: 'rewardstickers/swagbear.png',
   },
