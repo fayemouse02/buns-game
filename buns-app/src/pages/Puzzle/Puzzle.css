@@ -1,7 +1,7 @@
 .puzzle-grid {
   display: grid;
-  grid-template-columns: repeat(5, 120px);
-  grid-template-rows: repeat(5, 120px);
+  grid-template-columns: repeat(3, 200px);
+  grid-template-rows: repeat(3, 200px);
   gap: 4px;
   margin: 0 auto;
   width: max-content;
@@ -9,17 +9,52 @@
 
 .puzzle-tile {
   border-radius: 8px;
-  cursor: grab;
   box-shadow: 0 2px 5px rgba(0,0,0,0.1);
   transition: transform 0.2s;
-  /* background-repeat and background-size handled inline */
 }
 
+.controls button.btn {
+   background-color: #ffb3d9;
+    font-family: 'Pixelify Sans', sans-serif; /* Apply Pixelify Sans */
+    border: none;
+    border-radius: 8px;
+    padding: 8px 16px;
+    margin-bottom: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #fff;
+    transition: background 0.3s ease;
+}
 
+.controls button.btn:disabled {
+  background-color: #a0aec0;
+  cursor: not-allowed;
+}
 
+.controls button.btn:hover:not(:disabled) {
+  background-color: #ff8fc4;
+}
 
+.completion-message {
+    font-family: 'Pixelify Sans', sans-serif; /* Apply Pixelify Sans */
+  margin-top: 20px;
+  text-align: center;
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #333;
+  animation: fadeIn 1s ease forwards;
+}
 
+.reward-image {
+  width: 300px;
+  border-radius: 10px;
+  margin-top: 10px;
+}
 
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
 
 
 
