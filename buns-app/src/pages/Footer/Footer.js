@@ -5,7 +5,7 @@ function Footer() {
   return (
     <footer>
       <p>Made with 💕 by Bear</p>
-      <small>© 2025 BearyBlog</small>
+      <small>© 2025 TinyBearBlog</small>
     </footer>
   );
 }

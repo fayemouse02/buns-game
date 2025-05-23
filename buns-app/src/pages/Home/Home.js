@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+
 import "./Home.css"; // This should contain your CSS styles
 // Optionally import Google Fonts via index.html or CSS
 
@@ -18,6 +18,7 @@ function Home() {
     <li>🧩 Add puzzle section</li>
     <li>🐰 Add Build-a-Bun</li>
     <li>🖼️ Add image wall</li>
+    <li>🖼️ Work with bear/ bear lofi cafe</li>
   </ul>
   </div>
 );

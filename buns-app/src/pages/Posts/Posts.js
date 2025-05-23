@@ -45,15 +45,55 @@ const posts = [
       
   {
     id: 2,
-    title: "Poem2",
-    content: "TODO",
-    full: "TODO",
-  },
-  {
-    id: 3,
-    title: "Poem3",
-    content: "TODO",
-    full: "TODO",
+    title: "Birthday bun",
+    content: (
+        <div>
+          <h3>24/05/2025</h3>
+          <p> A little poem for a bun's special day.</p>
+        </div>
+            ),
+    full: (
+      <div>
+        <p>Today is the day the world got lucky.</p>
+        <p>The day you arrived — full of quiet magic you didn’t yet know you carried.</p>
+        <br></br>
+        <p>I think about how many versions of me</p>
+        <p>you’ve met along the way —</p>
+        <p>the sleepy mornings, the worried nights,</p>
+        <p>the messy, the silly, the small.</p>
+        <p>And how somehow, through all of it,</p>
+        <p>you’ve stayed.</p>
+        <br></br>
+        <p>Bun,</p>
+        <p>you are the most gentle truth I know.</p>
+        <p>You remind me that love need not be grand gestures —</p>
+        <p>it’s how you hold my hand without a word,</p>
+        <p>the way you listen when I don’t even know what I’m trying to say,</p>
+        <p>how you choose softness in a world that often asks for armor.</p>
+        <br></br>
+        <p>On your birthday,</p>
+        <p>I want to tell you this:</p>
+        <p>You are not just loved.</p>
+        <p>You are <em>treasured</em>.</p>
+        <p>The kind of loved that wraps itself around your shoulders</p>
+        <p>when you’re too tired to be strong.</p>
+        <p>The kind that believes in your quiet dreams,</p>
+        <p>even the ones you whisper only once.</p>
+        <br></br>
+        <p>You are more than I ever thought I’d be lucky enough to hold.</p>
+        <p>And still — here you are.</p>
+        <br></br>
+        <p>I love you, Bun.</p>
+        <p>All of you, exactly as you are,</p>
+        <p>in every version,</p>
+        <p>today and always.</p>
+        <br></br>
+        <p>Happy Birthday,</p>
+        <p>forever yours,</p>
+        <p><strong>Bear 🐻❤️🐰</strong></p>
+
+      </div>
+    ),
   },
 
 ];
@@ -75,18 +115,19 @@ function Posts() {
     );
   }
 
-  return (
-    <div className="container">
-      {posts.map((post) => (
-        <PostCard
-          key={post.id}
-          title={post.title}
-          content={post.content}
-          onClick={() => setSelectedPost(post)}
-        />
-      ))}
-    </div>
-  );
+ return (
+  <div className="container">
+    {[...posts].reverse().map((post) => (
+      <PostCard
+        key={post.id}
+        title={post.title}
+        content={post.content}
+        onClick={() => setSelectedPost(post)}
+      />
+    ))}
+  </div>
+);
+
 }
 
 export default Posts;
