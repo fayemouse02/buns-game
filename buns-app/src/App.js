@@ -10,6 +10,7 @@ import Posts from "./pages/Posts/Posts";
 import Recipies from "./pages/Recipies/Recipies";
 import Letters from "./pages/Letters/Letters";
 import Puzzle from "./pages/Puzzle/Puzzle";
+import Essays from "./pages/Essays/Essays";
 import "./App.css";
 
 function App() {
@@ -23,6 +24,7 @@ function App() {
         <Route path="/recipies" element={<Recipies />} />
         <Route path="/letters" element={<Letters />} />
         <Route path="/puzzle" element={<Puzzle />} />
+        <Route path="/essays" element={<Essays />} />
       </Routes>
       {/* <Footer /> */}
     </Router>

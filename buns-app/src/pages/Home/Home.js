@@ -15,10 +15,9 @@ function Home() {
   <ul>
     <li>📋 Add missing recipe details</li>
     <li>📝 Add missing poems</li>
-    <li>🧩 Add puzzle section</li>
     <li>🐰 Add Build-a-Bun</li>
     <li>🖼️ Add image wall</li>
-    <li>🖼️ Work with bear/ bear lofi cafe</li>
+    <li>📝 Work with bear/ bear lofi cafe</li>
   </ul>
   </div>
 );
